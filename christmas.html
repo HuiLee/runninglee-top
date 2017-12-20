@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Merry Christmas</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+<body id="page-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Rumi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">经由爱</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#services">展开你自己的神话</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">渴望是神秘的核心</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-primary text-white">
+    <div class="container text-center">
+        <h2>苏菲派神秘主义诗人</h2>
+        <p class="lead">你生而有翼，为何竟愿一生匍匐前进，形如虫蚁？</p>
+    </div>
+</header>
+
+<div id="source" style="display: none;">
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>经由爱</h2>
+                    <br>
+                    <p class="lead">
+                        经由爱，所有苦楚都会变得<br>
+                        甜蜜<br><br>
+                        经由爱，所有青铜都会变成<br>
+                        黄金<br><br>
+                        经由爱，所有伤痛都会变成<br>
+                        良药<br><br>
+                        经由爱，死去的一切都会<br>
+                        复活<br><br>
+                        经由爱，国王将会变为<br>
+                        奴隶！<br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>展开你自己的神话</h2>
+                    <br>
+                    <p class="lead">
+                        如果你能摆脱与你自身的<br>纠葛<br><br>
+                        所有天堂的精灵都会屈尊将你服侍<br><br>
+                        如果你能猎获你野兽般的<br>自我<br><br>
+                        你就获得了特权掌管所罗门的<br>王国<br><br>
+                        你是至福的鸟儿，生存在奇迹之中<br><br>
+                        如让你深陷牢笼，这多么悲惨<br><br>
+                        但你能重获自由，打破肉身的<br>牢狱<br><br>
+                        你会看到自己就是生命的圣哲与源泉<br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>渴望是神秘的核心</h2>
+                    <br>
+                    <p class="lead">
+                        渴望是神秘的核心<br><br>
+                        渴望本身就可以疗愈<br><br>
+                        忍受痛苦，这是唯一的法则<br><br>
+                        你必须训练你的愿望<br><br>
+                        如果你想要什么<br><br>
+                        那就先奉献什么
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="output"></div>
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">回答一个你不了解的问题是愚蠢的，到达一个你不期望的终点是悲哀的</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom JavaScript for this theme -->
+<script src="js/scrolling-nav.js"></script>
+<script>
+    function Typing(opts) {
+        this.version = '0.1';
+        this.source = opts.source;
+        this.output = opts.output;
+        this.delay = opts.delay || 120;
+        this.chain = {
+            parent: null,
+            dom: this.output,
+            val: []
+        }
+    }
+
+    Typing.fn = Typing.prototype = {
+        toArray: function (eles) {
+            //Array.prototype.slice;
+            var result = [];
+            for (var i = 0; i < eles.length; i++) {
+                result.push(eles[i]);
+            }
+            return result;
+        },
+        init: function () {
+            this.chain.val = this.convert(this.source, this.chain.val);
+        },
+        convert: function (dom, arr) {
+            var that = this,
+                children = this.toArray(dom.childNodes);
+
+            children.forEach(function (node) {
+                if (node.nodeType === 3) {
+                    arr = arr.concat(node.nodeValue.split(''));
+                } else if (node.nodeType === 1) {
+                    var val = [];
+                    val = that.convert(node, val);
+                    arr.push({
+                        'dom': node,
+                        'val': val
+                    });
+                }
+            });
+
+            return arr;
+        },
+        print: function (dom, val, callback) {
+            setTimeout(function () {
+                dom.appendChild(document.createTextNode(val));
+                callback();
+            }, this.delay);
+        },
+        play: function (ele) {
+            if (!ele) return;
+            if (!ele.val.length && ele.parent) this.play(ele.parent);
+            if (!ele.val.length) return;
+
+            var curr = ele.val.shift();
+            var that = this;
+
+            if (typeof curr === 'string') {
+                this.print(ele.dom, curr, function () {
+                    if (ele.val.length) {
+                        that.play(ele);
+                    } else if (ele.parent) {
+                        that.play(ele.parent);
+                    }
+                });
+            } else {
+                var dom = document.createElement(curr.dom.nodeName);
+                var attrs = that.toArray(curr.dom.attributes);
+                attrs.forEach(function (attr) {
+                    dom.setAttribute(attr.name, attr.value);
+                });
+                ele.dom.appendChild(dom);
+                curr.parent = ele;
+                curr.dom = dom;
+                this.play(curr.val.length ? curr : curr.parent);
+            }
+        },
+        start: function () {
+            this.init();
+            this.play(this.chain);
+        }
+    }
+</script>
+<script type="text/javascript">
+    var typing = new Typing({
+        source: document.getElementById('source'),
+        output: document.getElementById('output'),
+        delay: 30
+    });
+    typing.start();
+</script>
+</body>
+</html>
